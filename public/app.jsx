@@ -1,3 +1,6 @@
+var React = require('react');
+var ReactDOM = require('react-dom');
+
 var GreeterForm = React.createClass({
   formSubmit: function(e) {
     e.preventDefault();
@@ -28,7 +31,7 @@ var GreeterForm = React.createClass({
         <div>
           <textarea ref="message"></textarea>
         </div>
-        <button>Set name</button>
+        <button>Submit</button>
       </form>
     );
   }
