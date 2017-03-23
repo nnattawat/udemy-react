@@ -5,15 +5,26 @@ var Greeter = React.createClass({
       message: '...'
     }
   },
-  
+
+  getInitialState: function() {
+    return {
+      name: this.props.name,
+      message: this.props.message
+    }
+  },
+
   formSubmit: function(e) {
     e.preventDefault();
     var name = this.refs.name.value;
+    this.refs.name.value = '';
+    this.setState({
+      name: name
+    });
   },
 
   render: function() {
-    var name = this.props.name;
-    var message = this.props.message;
+    var name = this.state.name;
+    var message = this.state.message;
     return (
       <div>
         <h1>Hello {name}!</h1>
