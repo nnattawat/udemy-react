@@ -5,6 +5,12 @@ var Greeter = React.createClass({
       message: '...'
     }
   },
+  
+  formSubmit: function(e) {
+    e.preventDefault();
+    var name = this.refs.name.value;
+  },
+
   render: function() {
     var name = this.props.name;
     var message = this.props.message;
@@ -12,6 +18,11 @@ var Greeter = React.createClass({
       <div>
         <h1>Hello {name}!</h1>
         <p>{message}</p>
+
+        <form onSubmit={this.formSubmit}>
+          <input type="text" ref="name"/>
+          <button>Set name</button>
+        </form>
       </div>
     );
   }
