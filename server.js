@@ -1,6 +1,5 @@
 var express = require('express');
 
-
 // Create an app
 var app = express();
 
